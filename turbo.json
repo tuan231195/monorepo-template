@@ -1,7 +1,11 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
+	"globalDependencies": [
+		"package.json"
+	],
 	"pipeline": {
 		"build": {
+			"inputs": ["src/**", "test/**/*", "tsconfig.json", "package.json"],
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]
 		},
@@ -11,7 +15,7 @@
 		"test": {
 			"dependsOn": ["build"],
 			"outputs": [],
-			"inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
+			"inputs": ["src/**", "test/**/*", "jest.config.js", "package.json"]
 		},
 		"clean": {
 			"outputs": []
@@ -34,8 +38,7 @@
 		},
 		"release": {
 			"cache": false,
-			"dependsOn": ["build"],
-			"concurrency": 1
+			"dependsOn": ["build"]
 		}
 	}
 }
