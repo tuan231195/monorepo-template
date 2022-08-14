@@ -69,7 +69,8 @@ module.exports = {
                         "build": "swc --config-file ../../.swcrc ./src -d dist",
                         "test": "jest --passWithNoTests",
                         "tsc": "tsc",
-                        "release": "release-it --ci"
+                        "release": "release-it --ci",
+                        "plan-release": "release-it --ci --dry-run"
                     },
                 }
             },

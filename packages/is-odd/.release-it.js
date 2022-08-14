@@ -27,6 +27,9 @@ module.exports = {
 			}
 		  ]
 		},
+		"gitRawCommitsOpts": {
+			"path": __dirname,
+		},
 		"lernaPackage": name,
 		"path": __dirname,
 		"infile": "./CHANGELOG.md"

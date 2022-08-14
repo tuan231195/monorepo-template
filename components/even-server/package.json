@@ -14,7 +14,8 @@
     "package": "npm run prepare-workspace && npm run docker",
     "prepare-workspace": "pnpm-isolate-workspace . --src-less-disable --src-less-prod-disable --workspaces-exclude-glob=src --src-files-exclude-glob=src --src-files-enable",
     "docker": "docker build -t ${npm_package_config_docker}:${npm_package_version} . && docker tag ${npm_package_config_docker}:${npm_package_version} ${npm_package_config_docker}:latest",
-    "release": "release-it --ci"
+    "release": "release-it --ci",
+    "plan-release": "release-it --ci --dry-run"
   },
   "dependencies": {
     "@vdtn359/is-even": "workspace:*",
