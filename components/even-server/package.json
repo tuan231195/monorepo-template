@@ -1,6 +1,6 @@
 {
   "name": "@vdtn359/even-server",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "main": "dist/index.js",
   "scripts": {
