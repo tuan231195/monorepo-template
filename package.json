@@ -27,6 +27,7 @@
 		"@monorepolint/cli": "^0.4.0",
 		"@release-it/bumper": "^4.0.0",
 		"@release-it/conventional-changelog": "^5.0.0",
+		"@vdtn359/release-it-deps-plugin": "^1.0.1",
 		"@swc-node/register": "^1.5.1",
 		"@swc/cli": "^0.1.57",
 		"@swc/core": "^1.2.224",

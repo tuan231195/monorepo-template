@@ -67,6 +67,10 @@ module.exports = (dirname, overrides = {}) => {
 					},
 					infile: './CHANGELOG.md',
 				},
+				'@vdtn359/release-it-deps-plugin': {
+					packageName: packageJson.name,
+					workspacePath: __dirname,
+				},
 				'@release-it/bumper': {
 					in: './package.json',
 					out: ['./version.json'],
