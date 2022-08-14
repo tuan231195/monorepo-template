@@ -27,6 +27,8 @@ module.exports = {
 			}
 		  ]
 		},
+		"lernaPackage": name,
+		"path": __dirname,
 		"infile": "./CHANGELOG.md"
 	  },
 	  "@release-it/bumper": {
@@ -36,7 +38,7 @@ module.exports = {
 	},
 	"git": {
 	  "commitMessage": `chore(repo): release ${name} \${version}`,
-	  "tagName": `${name}-v\${version}`
+	  "tagName": `${name}@\${version}`
 	},
 	"npm": {
 	  "publish": false
