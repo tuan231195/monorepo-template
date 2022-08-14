@@ -1,5 +1,12 @@
 
 
+### [0.3.1](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.0...odd-server@0.3.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* **docs:** fix changelog ([872d0d0](https://github.com/tuan231195/monorepo-template/commit/872d0d01e09a63391db09046dcdd323163d00e3e))
+
 ## 0.3.0 (2022-08-14)
 
 
