@@ -1,6 +1,6 @@
 {
 	"name": "@vdtn359/is-odd",
-	"version": "0.2.11",
+	"version": "0.2.12",
 	"main": "dist/index.js",
 	"scripts": {
 		"lint": "eslint . --max-warnings=0",

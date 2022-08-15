@@ -1,5 +1,19 @@
 
 
+### [0.2.12](https://github.com/tuan231195/monorepo-template/compare/is-odd@0.2.11...is-odd@0.2.12) (2022-08-15)
+
+
+### Bug Fixes
+
+* **is-odd:** test change ([6d35db5](https://github.com/tuan231195/monorepo-template/commit/6d35db5525503e72dfc1bc1a9f319e92da29b19a))
+* **lint:** fix eslint ([0a26446](https://github.com/tuan231195/monorepo-template/commit/0a2644655d0247ec13f24f38253f66d7e7a29d5d))
+
+
+### Other changes
+
+* **build:** add pnpm lock to turbo ([b03563c](https://github.com/tuan231195/monorepo-template/commit/b03563c9965a5323bdc7db70f0c807a41fe933ba))
+* **repo:** release is-even 0.2.5 ([b728378](https://github.com/tuan231195/monorepo-template/commit/b728378f4517065206c79313d59f61b2e9c7d736))
+
 ### [0.2.11](https://github.com/tuan231195/monorepo-template/compare/is-odd@0.2.10...is-odd@0.2.11) (2022-08-15)
 
 
