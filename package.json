@@ -1,6 +1,7 @@
 {
 	"name": "@vdtn359/monorepo-template",
 	"private": true,
+	"description": "Test monorepo",
 	"workspaces": [
 		"packages/*",
 		"components/*",
