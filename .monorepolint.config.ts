@@ -16,6 +16,12 @@ module.exports = {
             },
             {
                 options: {
+                    file: ".eslintignore",
+                    templateFile: ".monorepolint/templates/.eslintignore"
+                },
+            },
+            {
+                options: {
                     file: ".eslintrc.js",
                     templateFile: ".monorepolint/templates/.eslintrc.js"
                 },

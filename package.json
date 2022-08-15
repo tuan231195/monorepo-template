@@ -35,7 +35,7 @@
 		"@swc/jest": "^0.2.22",
 		"@types/jest": "^28.1.6",
 		"@vdtn359/base-typescript": "^1.0.1",
-		"@vdtn359/eslint-config": "^1.1.0",
+		"@vdtn359/eslint-config": "^1.1.1",
 		"@vdtn359/jest-config": "^1.0.0",
 		"@vdtn359/prettier-config": "^1.0.0",
 		"chokidar": "^3.5.3",
