@@ -1,5 +1,18 @@
 
 
+### [0.2.5](https://github.com/tuan231195/monorepo-template/compare/is-even@0.2.4...is-even@0.2.5) (2022-08-15)
+
+
+### Bug Fixes
+
+* **lint:** fix eslint ([0a26446](https://github.com/tuan231195/monorepo-template/commit/0a2644655d0247ec13f24f38253f66d7e7a29d5d))
+* **repo:** add package hash support ([48ae17f](https://github.com/tuan231195/monorepo-template/commit/48ae17f2ba2cec4c96cde2bad9ba5ace6b37a300))
+
+
+### Other changes
+
+* **build:** add pnpm lock to turbo ([b03563c](https://github.com/tuan231195/monorepo-template/commit/b03563c9965a5323bdc7db70f0c807a41fe933ba))
+
 ### [0.2.4](https://github.com/tuan231195/monorepo-template/compare/is-even@0.2.3...is-even@0.2.4) (2022-08-15)
 
 
