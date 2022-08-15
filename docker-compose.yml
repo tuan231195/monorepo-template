@@ -23,7 +23,7 @@ services:
   dev-tasks:
     <<: *volumes
     image: vdtn359/monorepo-template-base
-    command: npm run watch:all
+    command: npm run watch
   odd-server:
     <<: *volumes
     depends_on:
