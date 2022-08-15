@@ -34,6 +34,7 @@ module.exports = (dirname, overrides = {}) => {
 							},
 						],
 					},
+					ignoreRecommendedBump: process.env.IGNORE_RECOMMENDED_BUMP,
 					gitRawCommitsOpts: {
 						path: dirname,
 					},
