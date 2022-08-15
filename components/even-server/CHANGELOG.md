@@ -1,5 +1,13 @@
 
 
+### [0.3.4](https://github.com/tuan231195/monorepo-template/compare/even-server@0.3.3...even-server@0.3.4) (2022-08-15)
+
+
+### Other changes
+
+* **release:** add ability to ignore recommended bump ([99dae7c](https://github.com/tuan231195/monorepo-template/commit/99dae7c5b8c31daa072b8355080d684cdd3fe203))
+* **repo:** release is-even 0.2.4 ([9bf219a](https://github.com/tuan231195/monorepo-template/commit/9bf219a35f3720f467d6acd9fff2ef50f6f7361a))
+
 ### [0.3.3](https://github.com/tuan231195/monorepo-template/compare/even-server@0.3.2...even-server@0.3.3) (2022-08-14)
 
 
