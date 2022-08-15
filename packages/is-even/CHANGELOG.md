@@ -1,5 +1,12 @@
 
 
+## 0.3.0 (2022-08-15)
+
+
+### Features
+
+* **repo:** initial commit ([7db01d5](https://github.com/tuan231195/monorepo-template/commit/7db01d540b68bc2a43f4a13711e4958dc7760f84))
+
 ### [0.2.5](https://github.com/tuan231195/monorepo-template/compare/is-even@0.2.4...is-even@0.2.5) (2022-08-15)
 
 
