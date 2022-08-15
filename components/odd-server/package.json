@@ -16,7 +16,7 @@
 		"docker": "docker build -t ${npm_package_config_docker}:${npm_package_version} . && docker tag ${npm_package_config_docker}:${npm_package_version} ${npm_package_config_docker}:latest",
 		"release": "release-it --ci",
 		"plan-release": "release-it --ci --dry-run",
-		"patch": "IGNORE_RECOMMENDED_BUMP=1 release-it -i patch --ci"
+		"patch": "release-it -i patch --ci"
 	},
 	"dependencies": {
 		"@vdtn359/is-odd": "workspace:*",

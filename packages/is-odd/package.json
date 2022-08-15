@@ -11,7 +11,7 @@
 		"clean": "rm -rf dist",
 		"release": "release-it --ci",
 		"plan-release": "release-it --ci --dry-run",
-		"patch": "IGNORE_RECOMMENDED_BUMP=1 release-it -i patch --ci"
+		"patch": "release-it -i patch --ci"
 	},
 	"dependencies": {
 		"@vdtn359/is-even": "workspace:*",
