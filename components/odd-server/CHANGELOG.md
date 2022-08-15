@@ -1,5 +1,7 @@
 
 
+### [0.3.4](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.3...odd-server@0.3.4) (2022-08-15)
+
 ### [0.3.3](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.2...odd-server@0.3.3) (2022-08-14)
 
 
