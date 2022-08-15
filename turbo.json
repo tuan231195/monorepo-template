@@ -1,0 +1,52 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"globalDependencies": ["package.json"],
+	"pipeline": {
+		"build": {
+			"inputs": ["src/**", "tsconfig.json", "package.json"],
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"]
+		},
+		"tsc": {
+			"outputs": []
+		},
+		"test": {
+			"dependsOn": ["build"],
+			"outputs": [],
+			"inputs": ["src/**", "test/**/*", "jest.config.js", "package.json"]
+		},
+		"clean": {
+			"outputs": []
+		},
+		"lint": {
+			"outputs": []
+		},
+		"watch": {
+			"cache": false,
+			"outputs": []
+		},
+		"start": {
+			"cache": false,
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"package": {
+			"cache": false,
+			"dependsOn": ["build"]
+		},
+		"patch": {
+			"cache": false,
+			"dependsOn": ["build"]
+		},
+		"release": {
+			"inputs": ["src/**", "tsconfig.json", "package.json"],
+			"cache": false,
+			"dependsOn": ["build"]
+		},
+		"plan-release": {
+			"inputs": ["src/**", "tsconfig.json", "package.json"],
+			"cache": false,
+			"dependsOn": ["build"]
+		}
+	}
+}
