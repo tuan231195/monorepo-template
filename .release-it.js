@@ -28,6 +28,10 @@ module.exports = (dirname, overrides = {}) => {
 								type: 'docs',
 								section: 'Documentations',
 							},
+							{
+								type: 'chore',
+								section: 'Other changes',
+							},
 						],
 					},
 					gitRawCommitsOpts: {
