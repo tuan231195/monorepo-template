@@ -1,5 +1,12 @@
 
 
+### [0.2.5](https://github.com/tuan231195/monorepo-template/compare/is-odd@0.2.4...is-odd@0.2.5) (2022-08-15)
+
+
+### Bug Fixes
+
+* **is-odd:** is-odd again ([a8cc626](https://github.com/tuan231195/monorepo-template/commit/a8cc62654ac6c6020ff7a2db742be378c4ef9afa))
+
 ### [0.2.4](https://github.com/tuan231195/monorepo-template/compare/is-odd@0.2.3...is-odd@0.2.4) (2022-08-14)
 
 
