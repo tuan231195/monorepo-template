@@ -20,6 +20,8 @@ const testDependencies = sourceFilesWithTests.concat([...getDependenciesMatching
 
 const lintDependencies = sourceFilesWithTests.concat([...getDependenciesMatching(['prettier', 'lint'])]);
 
+const packageDependencies = sourceDependencies.concat(['Dockerfile', '../../.dockerignore']);
+
 const baseObject = {
 	$schema: 'https://turborepo.org/schema.json',
 	globalDependencies: [],
@@ -56,6 +58,7 @@ const baseObject = {
 		},
 		package: {
 			dependsOn: ['build'],
+			inputs: packageDependencies,
 		},
 		patch: {
 			cache: false,
