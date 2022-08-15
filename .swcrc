@@ -1,0 +1,31 @@
+{
+  "test": ".*.ts$",
+  "exclude": [
+    ".*test.tsx?$",
+    ".*spec.tsx?$"
+  ],
+  "sourceMaps": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true,
+      "decorators": true,
+      "dynamicImport": true
+    },
+     "baseUrl": ".",
+    "paths": {
+        "src/*": ["./src/*"]
+    },
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": true
+    }
+  },
+  "module": {
+    "strict": true,
+    "type": "commonjs",
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}
