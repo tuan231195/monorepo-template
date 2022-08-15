@@ -1,5 +1,14 @@
 
 
+### [0.3.6](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.5...odd-server@0.3.6) (2022-08-15)
+
+
+### Other changes
+
+* **release:** add ability to ignore recommended bump ([99dae7c](https://github.com/tuan231195/monorepo-template/commit/99dae7c5b8c31daa072b8355080d684cdd3fe203))
+* **repo:** release is-even 0.2.4 ([9bf219a](https://github.com/tuan231195/monorepo-template/commit/9bf219a35f3720f467d6acd9fff2ef50f6f7361a))
+* **repo:** release is-odd 0.2.11 ([a8917b4](https://github.com/tuan231195/monorepo-template/commit/a8917b46b8131a41bb30298bccf133be5eef8c44))
+
 ### [0.3.5](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.4...odd-server@0.3.5) (2022-08-15)
 
 
