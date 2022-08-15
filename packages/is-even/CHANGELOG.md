@@ -1,5 +1,12 @@
 
 
+### [0.2.4](https://github.com/tuan231195/monorepo-template/compare/is-even@0.2.3...is-even@0.2.4) (2022-08-15)
+
+
+### Other changes
+
+* **release:** add ability to ignore recommended bump ([99dae7c](https://github.com/tuan231195/monorepo-template/commit/99dae7c5b8c31daa072b8355080d684cdd3fe203))
+
 ### [0.2.3](https://github.com/tuan231195/monorepo-template/compare/is-even@0.2.2...is-even@0.2.3) (2022-08-14)
 
 
