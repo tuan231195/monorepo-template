@@ -18,6 +18,7 @@
 		"test:all": "turbo run test",
 		"package:all": "turbo run package",
 		"release:all": "turbo run release --concurrency 1",
+		"patch:all": "turbo run patch --concurrency 1",
 		"plan-release:all": "turbo run plan-release --concurrency 1",
 		"start:all": "turbo run start --parallel",
 		"start:single": "turbo run start --filter",

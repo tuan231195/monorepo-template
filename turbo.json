@@ -1,8 +1,6 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
-	"globalDependencies": [
-		"package.json"
-	],
+	"globalDependencies": ["package.json"],
 	"pipeline": {
 		"build": {
 			"inputs": ["src/**", "test/**/*", "tsconfig.json", "package.json"],
@@ -33,6 +31,10 @@
 			"outputs": []
 		},
 		"package": {
+			"cache": false,
+			"dependsOn": ["build"]
+		},
+		"patch": {
 			"cache": false,
 			"dependsOn": ["build"]
 		},

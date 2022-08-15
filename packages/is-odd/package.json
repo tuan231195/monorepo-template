@@ -10,7 +10,8 @@
 		"watch": "swc --config-file ../../.swcrc ./src -d dist -w",
 		"clean": "rm -rf dist",
 		"release": "release-it --ci",
-		"plan-release": "release-it --ci --dry-run"
+		"plan-release": "release-it --ci --dry-run",
+		"patch": "IGNORE_RECOMMENDED_BUMP=1 release-it -i patch --ci"
 	},
 	"dependencies": {
 		"@vdtn359/is-even": "workspace:*",

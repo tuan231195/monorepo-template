@@ -15,7 +15,8 @@
 		"prepare-workspace": "pnpm-isolate-workspace . --src-less-disable --src-less-prod-disable --workspaces-exclude-glob=src --src-files-exclude-glob=src --src-files-enable",
 		"docker": "docker build -t ${npm_package_config_docker}:${npm_package_version} . && docker tag ${npm_package_config_docker}:${npm_package_version} ${npm_package_config_docker}:latest",
 		"release": "release-it --ci",
-		"plan-release": "release-it --ci --dry-run"
+		"plan-release": "release-it --ci --dry-run",
+		"patch": "IGNORE_RECOMMENDED_BUMP=1 release-it -i patch --ci"
 	},
 	"dependencies": {
 		"@vdtn359/is-odd": "workspace:*",
