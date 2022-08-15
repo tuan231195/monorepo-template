@@ -11,6 +11,7 @@
 		"postinstall": "[ \"$NODE_ENV\" = production ] && exit 0; husky install",
 		"monorepolint:check": "mrl check",
 		"monorepolint:fix": "mrl check --fix",
+		"generate-turbo": "node .monorepolint/templates/turbo.js",
 		"local:docker": "docker build -t vdtn359/monorepo-template-base . --progress plain && docker compose up --remove-orphans",
 		"clean": "turbo run clean",
 		"lint": "turbo run lint",

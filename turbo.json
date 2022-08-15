@@ -1,52 +1,134 @@
 {
-	"$schema": "https://turborepo.org/schema.json",
-	"globalDependencies": ["package.json"],
-	"pipeline": {
-		"build": {
-			"inputs": ["src/**", "tsconfig.json", "package.json"],
-			"dependsOn": ["^build"],
-			"outputs": ["dist/**"]
-		},
-		"tsc": {
-			"outputs": []
-		},
-		"test": {
-			"dependsOn": ["build"],
-			"outputs": [],
-			"inputs": ["src/**", "test/**/*", "jest.config.js", "package.json"]
-		},
-		"clean": {
-			"outputs": []
-		},
-		"lint": {
-			"outputs": []
-		},
-		"watch": {
-			"cache": false,
-			"outputs": []
-		},
-		"start": {
-			"cache": false,
-			"dependsOn": ["build"],
-			"outputs": []
-		},
-		"package": {
-			"cache": false,
-			"dependsOn": ["build"]
-		},
-		"patch": {
-			"cache": false,
-			"dependsOn": ["build"]
-		},
-		"release": {
-			"inputs": ["src/**", "tsconfig.json", "package.json"],
-			"cache": false,
-			"dependsOn": ["build"]
-		},
-		"plan-release": {
-			"inputs": ["src/**", "tsconfig.json", "package.json"],
-			"cache": false,
-			"dependsOn": ["build"]
-		}
-	}
+    "$schema": "https://turborepo.org/schema.json",
+    "globalDependencies": [],
+    "pipeline": {
+        "build": {
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "package.json",
+                "../../tsconfig.base.json",
+                "../../node_modules/@swc-node/register/package.json",
+                "../../node_modules/@swc/cli/package.json",
+                "../../node_modules/@swc/core/package.json",
+                "../../node_modules/@swc/jest/package.json",
+                "../../node_modules/@vdtn359/base-typescript/package.json",
+                "../../node_modules/typescript/package.json"
+            ],
+            "dependsOn": [
+                "^build"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "tsc": {
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "package.json",
+                "../../tsconfig.base.json",
+                "../../node_modules/@swc-node/register/package.json",
+                "../../node_modules/@swc/cli/package.json",
+                "../../node_modules/@swc/core/package.json",
+                "../../node_modules/@swc/jest/package.json",
+                "../../node_modules/@vdtn359/base-typescript/package.json",
+                "../../node_modules/typescript/package.json"
+            ],
+            "outputs": []
+        },
+        "test": {
+            "dependsOn": [
+                "build"
+            ],
+            "outputs": [],
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "package.json",
+                "tests/**",
+                "../../node_modules/@swc/jest/package.json",
+                "../../node_modules/@types/jest/package.json",
+                "../../node_modules/@vdtn359/jest-config/package.json",
+                "../../node_modules/jest/package.json"
+            ]
+        },
+        "clean": {
+            "outputs": []
+        },
+        "lint": {
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "package.json",
+                "tests/**",
+                "../../node_modules/@monorepolint/cli/package.json",
+                "../../node_modules/@vdtn359/eslint-config/package.json",
+                "../../node_modules/@vdtn359/prettier-config/package.json",
+                "../../node_modules/eslint/package.json",
+                "../../node_modules/lint-staged/package.json",
+                "../../node_modules/monorepolint/package.json",
+                "../../node_modules/prettier/package.json"
+            ],
+            "outputs": []
+        },
+        "watch": {
+            "cache": false,
+            "outputs": []
+        },
+        "start": {
+            "cache": false,
+            "dependsOn": [
+                "build"
+            ],
+            "outputs": []
+        },
+        "package": {
+            "dependsOn": [
+                "build"
+            ]
+        },
+        "patch": {
+            "cache": false,
+            "dependsOn": [
+                "build"
+            ]
+        },
+        "release": {
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "package.json",
+                "../../tsconfig.base.json",
+                "../../node_modules/@swc-node/register/package.json",
+                "../../node_modules/@swc/cli/package.json",
+                "../../node_modules/@swc/core/package.json",
+                "../../node_modules/@swc/jest/package.json",
+                "../../node_modules/@vdtn359/base-typescript/package.json",
+                "../../node_modules/typescript/package.json"
+            ],
+            "cache": false,
+            "dependsOn": [
+                "build"
+            ]
+        },
+        "plan-release": {
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "package.json",
+                "../../tsconfig.base.json",
+                "../../node_modules/@swc-node/register/package.json",
+                "../../node_modules/@swc/cli/package.json",
+                "../../node_modules/@swc/core/package.json",
+                "../../node_modules/@swc/jest/package.json",
+                "../../node_modules/@vdtn359/base-typescript/package.json",
+                "../../node_modules/typescript/package.json"
+            ],
+            "cache": false,
+            "dependsOn": [
+                "build"
+            ]
+        }
+    }
 }
