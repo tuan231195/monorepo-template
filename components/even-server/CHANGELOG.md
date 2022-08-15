@@ -1,5 +1,17 @@
 
 
+## 0.4.0 (2022-08-15)
+
+
+### Features
+
+* **repo:** initial commit ([7db01d5](https://github.com/tuan231195/monorepo-template/commit/7db01d540b68bc2a43f4a13711e4958dc7760f84))
+
+
+### Other changes
+
+* **repo:** release is-even 0.3.0 ([b61a86f](https://github.com/tuan231195/monorepo-template/commit/b61a86f391630170101be55dd73edbd34ab3d3b6))
+
 ### [0.3.5](https://github.com/tuan231195/monorepo-template/compare/even-server@0.3.4...even-server@0.3.5) (2022-08-15)
 
 
