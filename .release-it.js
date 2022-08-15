@@ -88,7 +88,10 @@ module.exports = (dirname, overrides = {}) => {
 				release: true,
 				releaseName: `Release: ${name} \${version}`,
 			},
+			hooks: {
+				"after:bump": "cd ../.. && git add . --all",
+			}
 		},
-		overrides
+		overrides,
 	);
 };
