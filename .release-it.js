@@ -1,5 +1,16 @@
 /* eslint-disable */
 const merge = require('lodash.merge');
+const { exec } = require('shelljs');
+
+const getPackageHash = (packageName) => {
+	try {
+		const { tasks } = JSON.parse(exec(`npx turbo run release --filter ${packageName} --dry-run=json`, { silent:true, cwd: __dirname }).stdout);
+		return tasks[tasks.length - 1].hash;
+	} catch (err) {
+		console.error('Failed to get package hash', err);
+		return undefined;
+	}
+}
 
 module.exports = (dirname, overrides = {}) => {
 	const packageJson = require(`${dirname}/package.json`);
@@ -74,10 +85,7 @@ module.exports = (dirname, overrides = {}) => {
 				'@vdtn359/release-it-deps-plugin': {
 					packageName: packageJson.name,
 					workspacePath: __dirname,
-				},
-				'@release-it/bumper': {
-					in: './package.json',
-					out: ['./version.json'],
+					hash: () => getPackageHash(packageJson.name),
 				},
 			},
 			git: {

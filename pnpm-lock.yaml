@@ -5,7 +5,6 @@ importers:
   .:
     specifiers:
       '@monorepolint/cli': ^0.4.0
-      '@release-it/bumper': ^4.0.0
       '@release-it/conventional-changelog': ^5.0.0
       '@swc-node/register': ^1.5.1
       '@swc/cli': ^0.1.57
@@ -16,7 +15,7 @@ importers:
       '@vdtn359/eslint-config': ^1.1.1
       '@vdtn359/jest-config': ^1.0.0
       '@vdtn359/prettier-config': ^1.0.0
-      '@vdtn359/release-it-deps-plugin': ^1.0.1
+      '@vdtn359/release-it-deps-plugin': ^1.0.3
       chokidar: ^3.5.3
       commitizen: ^4.2.5
       cz-customizable: ^6.9.1
@@ -35,7 +34,6 @@ importers:
       typescript: ^4.7.4
     devDependencies:
       '@monorepolint/cli': 0.4.0
-      '@release-it/bumper': 4.0.0_release-it@15.3.0
       '@release-it/conventional-changelog': 5.0.0_release-it@15.3.0
       '@swc-node/register': 1.5.1_typescript@4.7.4
       '@swc/cli': 0.1.57_@swc+core@1.2.224+chokidar@3.5.3
@@ -46,7 +44,7 @@ importers:
       '@vdtn359/eslint-config': 1.1.1_21e0e5878d5c40347539b47817aa78ad
       '@vdtn359/jest-config': 1.0.0_@swc+jest@0.2.22+jest@28.1.3
       '@vdtn359/prettier-config': 1.0.0_prettier@2.7.1
-      '@vdtn359/release-it-deps-plugin': 1.0.1
+      '@vdtn359/release-it-deps-plugin': 1.0.3
       chokidar: 3.5.3
       commitizen: 4.2.5_@swc+core@1.2.224
       cz-customizable: 6.9.1
@@ -2358,24 +2356,6 @@ packages:
       write-yaml-file: 4.2.0
     dev: true
 
-  /@release-it/bumper/4.0.0_release-it@15.3.0:
-    resolution: {integrity: sha512-DswMVRuWNeeuDPd8DNpMhuHjqxnwOi5A+v9CTrbAQ7/1K+VOGUGItS4ekjWfb1qBvJw/ouiAinBo9ckjtnhktA==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      release-it: ^15.0.0-esm.4
-    dependencies:
-      '@iarna/toml': 2.2.5
-      detect-indent: 7.0.0
-      fast-glob: 3.2.11
-      ini: 3.0.0
-      js-yaml: 4.1.0
-      lodash.castarray: 4.4.0
-      lodash.get: 4.4.2
-      lodash.set: 4.3.2
-      release-it: 15.3.0
-      semver: 7.3.7
-    dev: true
-
   /@release-it/conventional-changelog/5.0.0_release-it@15.3.0:
     resolution: {integrity: sha512-YAvGgxA8cIQSbmyHmAmLMwzCkNP74upLST8jFuDJTI+AVfK2Grp2HbZu0/NeV3sHYD20sT8YMzNVUeRxNlyHeg==}
     engines: {node: '>=14'}
@@ -3046,8 +3026,8 @@ packages:
       prettier: 2.7.1
     dev: true
 
-  /@vdtn359/release-it-deps-plugin/1.0.1:
-    resolution: {integrity: sha512-QswOxgKqCdBQDykMym2KmU2mBjbu4EDq2Eiro0qR9H+DIUbVyFGGyMFBeg360lusLc01Ei7e1WQIxexK4XpVAw==}
+  /@vdtn359/release-it-deps-plugin/1.0.3:
+    resolution: {integrity: sha512-o7s56lBJW4XFEtmOCZChHc5DiD2M4PAfQfkPaPxO9gJWe+qVdmJNfocbtil96xSuwbIWG+Cn1+ZY7biXWlYUdg==}
     dependencies:
       '@vdtn359/workspace-info': 2.0.0
     dev: true
@@ -4504,11 +4484,6 @@ packages:
   /detect-indent/6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
     engines: {node: '>=8'}
-    dev: true
-
-  /detect-indent/7.0.0:
-    resolution: {integrity: sha512-/6kJlmVv6RDFPqaHC/ZDcU8bblYcoph2dUQ3kB47QqhkUEqXe3VZPELK9BaEMrC73qu+wn0AQ7iSteceN+yuMw==}
-    engines: {node: '>=12.20'}
     dev: true
 
   /detect-newline/3.1.0:
@@ -6001,11 +5976,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /ini/3.0.0:
-    resolution: {integrity: sha512-TxYQaeNW/N8ymDvwAxPyRbhMBtnEwuvaTYpOQkFx1nSeusgezHniEc/l35Vo4iCq/mMiTJbpD7oYxN98hFlfmw==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
-    dev: true
-
   /inquirer/8.2.4:
     resolution: {integrity: sha512-nn4F01dxU8VeKfq192IjLsxu0/OmMZ4Lg3xKAns148rCaXP6ntAoEkVYZThWjwON8AlzdZZi6oqnhNbxUG9hVg==}
     engines: {node: '>=12.0.0'}
@@ -7128,16 +7098,8 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash.castarray/4.4.0:
-    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
-    dev: true
-
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: true
-
-  /lodash.get/4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
     dev: true
 
   /lodash.ismatch/4.4.0:
@@ -7150,10 +7112,6 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
-
-  /lodash.set/4.3.2:
-    resolution: {integrity: sha512-4hNPN5jlm/N/HLMCO43v8BXKq9Z7QdAGc/VGrRD61w8gN9g/6jF9A4L1pbUgBLCffi0w9VsXfTOij5x8iTyFvg==}
     dev: true
 
   /lodash/4.17.21:
