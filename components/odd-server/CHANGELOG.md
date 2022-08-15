@@ -1,5 +1,12 @@
 
 
+### [0.3.5](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.4...odd-server@0.3.5) (2022-08-15)
+
+
+### Other changes
+
+* **repo:** release is-odd 0.2.10 ([aed1892](https://github.com/tuan231195/monorepo-template/commit/aed189234c23a6bf58f96952211ce907f96b7a12))
+
 ### [0.3.4](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.3...odd-server@0.3.4) (2022-08-15)
 
 ### [0.3.3](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.3.2...odd-server@0.3.3) (2022-08-14)
