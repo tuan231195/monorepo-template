@@ -60,8 +60,7 @@ module.exports = (dirname, overrides = {}) => {
 			},
 			hooks: {
 				'after:bump': 'cd ../.. && git add . --all && cd -',
-				'after:release':
-					'npm run publish-package --if present | tee node_modules/logs.txt && cat node_modules/logs.txt',
+				'after:release': 'npm run publish-package --if-present',
 			},
 		},
 		overrides
