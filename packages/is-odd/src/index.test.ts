@@ -1,6 +1,6 @@
 import { isOdd } from './index';
 
-describe('isOdd', () => {
+describe('Test isOdd', () => {
 	test('it detects even numbers', () => {
 		expect(isOdd(0)).toBe(false);
 		expect(isOdd(2)).toBe(false);
