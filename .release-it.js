@@ -59,9 +59,8 @@ module.exports = (dirname, overrides = {}) => {
 				releaseName: `Release: ${name} \${version}`,
 			},
 			hooks: {
-				'after:bump': 'cd ../.. && git add . --all',
-				'after:release':
-					'npm run publish-package --if present | tee node_modules/logs.txt && cat node_modules/logs.txt',
+				'after:bump': 'cd ../.. && git add . --all && cd -',
+				'after:release': 'npm run publish-package --if present',
 			},
 		},
 		overrides
