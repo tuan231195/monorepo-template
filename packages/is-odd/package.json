@@ -11,7 +11,8 @@
 		"clean": "rm -rf dist",
 		"release": "release-it --ci",
 		"plan-release": "release-it --ci --dry-run",
-		"patch": "release-it -i patch --ci"
+		"patch": "release-it -i patch --ci",
+		"default": "echo default"
 	},
 	"dependencies": {
 		"@vdtn359/is-even": "workspace:*",

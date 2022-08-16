@@ -1,10 +1,9 @@
 version: 2.1
 
 orbs:
-    node: circleci/node@3.0.0
-
+    continuation: circleci/continuation@0.3.1
 jobs:
-    install:
+    generate_config:
         working_directory: ~/app
         docker:
             - image: vdtn359/node-pnpm-base:16-alpine-7.9.0
@@ -20,31 +19,15 @@ jobs:
                   paths:
                       - node_modules
                         - .
-            - persist_to_workspace:
-                  root: .
-                  paths:
-                      - .
+            - run:
+                  name: Generate pipeline config
+                  command: node ./scripts/generate-pipeline-config
+            - continuation/continue:
+                  parameters: '{}'
+                  configuration_path: configs/generated_config.yml
 
-    test:
-        docker:
-            - image: vdtn359/node-pnpm-base:16-alpine-7.9.0
-        steps:
-            - attach_workspace:
-                  at: .
-            - run:
-                  name: Build
-                  command: npm run build
-            - run:
-                  name: Lint
-                  command: npm run lint
-            - run:
-                  name: Test
-                  command: npm run test
 workflows:
     version: 2
-    build_and_test:
+    setup:
         jobs:
-            - install
-            - test:
-                  requires:
-                      - install
+            - generate_config

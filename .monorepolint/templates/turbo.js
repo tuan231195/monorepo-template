@@ -1,35 +1,37 @@
 const path = require('path');
 const fs = require('fs');
-const packageJson = require('../../package.json');
 
-const getDependenciesMatching = (globs) =>
-	Object.keys(packageJson.devDependencies || {})
-		.filter((name) => globs.some((glob) => name.includes(glob)))
-		.map((name) => `../../node_modules/${name}/package.json`);
-
-const sourceFiles = ['src/**', 'tsconfig.json', 'package.json'];
-
+const sourceFiles = ['src/**', 'package.json'];
 const sourceFilesWithTests = sourceFiles.concat(['tests/**']);
 
-const sourceDependencies = sourceFiles.concat([
-	'../../tsconfig.base.json',
-	...getDependenciesMatching(['tsc', 'typescript', 'swc']),
-]);
+const noTestFiles = [':!src/*.test.ts', ':!src/*.test.tsx', ':!src/*.spec.ts', ':!src/*.spec.tsx'];
+const tsConfig = ['tsconfig.json', 'tsconfig.eslint.json', '../../tsconfig.base.json', '../../.swcrc'];
+const testConfig = ['jest.config.js'];
+const lintConfig = ['.eslintrc.js', '.eslintignore', '../../.prettierrc'];
+const packageConfig = ['Dockerfile', '../../.dockerignore'];
 
-const testDependencies = sourceFilesWithTests.concat([...getDependenciesMatching(['jest'])]);
-
-const lintDependencies = sourceFilesWithTests.concat([...getDependenciesMatching(['prettier', 'lint'])]);
-
-const packageDependencies = sourceDependencies.concat(['Dockerfile', '../../.dockerignore']);
+const ciDependencies = ['../../docker-compose.yml'];
+const sourceDependencies = sourceFiles.concat(tsConfig);
+const sourceOnlyDependencies = sourceDependencies.concat(noTestFiles);
+const testDependencies = sourceFilesWithTests.concat(testConfig);
+const lintDependencies = sourceFilesWithTests.concat(lintConfig);
+const packageDependencies = sourceOnlyDependencies.concat(packageConfig);
+const defaultDependencies = Array.from(
+	new Set([...sourceDependencies, ...testDependencies, ...lintDependencies, ...ciDependencies])
+);
 
 const baseObject = {
 	$schema: 'https://turborepo.org/schema.json',
 	globalDependencies: [],
 	pipeline: {
 		build: {
-			inputs: sourceDependencies,
+			inputs: sourceOnlyDependencies,
 			dependsOn: ['^build'],
 			outputs: ['dist/**'],
+		},
+		default: {
+			inputs: defaultDependencies,
+			outputs: [],
 		},
 		tsc: {
 			inputs: sourceDependencies,
@@ -65,12 +67,12 @@ const baseObject = {
 			dependsOn: ['build'],
 		},
 		release: {
-			inputs: sourceDependencies,
+			inputs: sourceOnlyDependencies,
 			cache: false,
 			dependsOn: ['build'],
 		},
 		'plan-release': {
-			inputs: sourceDependencies,
+			inputs: sourceOnlyDependencies,
 			cache: false,
 			dependsOn: ['build'],
 		},

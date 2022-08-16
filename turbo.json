@@ -5,65 +5,57 @@
 		"build": {
 			"inputs": [
 				"src/**",
-				"tsconfig.json",
 				"package.json",
+				"tsconfig.json",
+				"tsconfig.eslint.json",
 				"../../tsconfig.base.json",
-				"../../node_modules/@swc-node/register/package.json",
-				"../../node_modules/@swc/cli/package.json",
-				"../../node_modules/@swc/core/package.json",
-				"../../node_modules/@swc/jest/package.json",
-				"../../node_modules/@vdtn359/base-typescript/package.json",
-				"../../node_modules/typescript/package.json"
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx"
 			],
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]
 		},
+		"default": {
+			"inputs": [
+				"src/**",
+				"package.json",
+				"tsconfig.json",
+				"tsconfig.eslint.json",
+				"../../tsconfig.base.json",
+				"../../.swcrc",
+				"tests/**",
+				"jest.config.js",
+				".eslintrc.js",
+				".eslintignore",
+				"../../.prettierrc",
+				"../../docker-compose.yml"
+			],
+			"outputs": []
+		},
 		"tsc": {
 			"inputs": [
 				"src/**",
-				"tsconfig.json",
 				"package.json",
+				"tsconfig.json",
+				"tsconfig.eslint.json",
 				"../../tsconfig.base.json",
-				"../../node_modules/@swc-node/register/package.json",
-				"../../node_modules/@swc/cli/package.json",
-				"../../node_modules/@swc/core/package.json",
-				"../../node_modules/@swc/jest/package.json",
-				"../../node_modules/@vdtn359/base-typescript/package.json",
-				"../../node_modules/typescript/package.json"
+				"../../.swcrc"
 			],
 			"outputs": []
 		},
 		"test": {
 			"dependsOn": ["build"],
 			"outputs": [],
-			"inputs": [
-				"src/**",
-				"tsconfig.json",
-				"package.json",
-				"tests/**",
-				"../../node_modules/@swc/jest/package.json",
-				"../../node_modules/@types/jest/package.json",
-				"../../node_modules/@vdtn359/jest-config/package.json",
-				"../../node_modules/jest/package.json"
-			]
+			"inputs": ["src/**", "package.json", "tests/**", "jest.config.js"]
 		},
 		"clean": {
 			"outputs": []
 		},
 		"lint": {
-			"inputs": [
-				"src/**",
-				"tsconfig.json",
-				"package.json",
-				"tests/**",
-				"../../node_modules/@monorepolint/cli/package.json",
-				"../../node_modules/@vdtn359/eslint-config/package.json",
-				"../../node_modules/@vdtn359/prettier-config/package.json",
-				"../../node_modules/eslint/package.json",
-				"../../node_modules/lint-staged/package.json",
-				"../../node_modules/monorepolint/package.json",
-				"../../node_modules/prettier/package.json"
-			],
+			"inputs": ["src/**", "package.json", "tests/**", ".eslintrc.js", ".eslintignore", "../../.prettierrc"],
 			"outputs": []
 		},
 		"watch": {
@@ -79,15 +71,15 @@
 			"dependsOn": ["build"],
 			"inputs": [
 				"src/**",
-				"tsconfig.json",
 				"package.json",
+				"tsconfig.json",
+				"tsconfig.eslint.json",
 				"../../tsconfig.base.json",
-				"../../node_modules/@swc-node/register/package.json",
-				"../../node_modules/@swc/cli/package.json",
-				"../../node_modules/@swc/core/package.json",
-				"../../node_modules/@swc/jest/package.json",
-				"../../node_modules/@vdtn359/base-typescript/package.json",
-				"../../node_modules/typescript/package.json",
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx",
 				"Dockerfile",
 				"../../.dockerignore"
 			]
@@ -99,15 +91,15 @@
 		"release": {
 			"inputs": [
 				"src/**",
-				"tsconfig.json",
 				"package.json",
+				"tsconfig.json",
+				"tsconfig.eslint.json",
 				"../../tsconfig.base.json",
-				"../../node_modules/@swc-node/register/package.json",
-				"../../node_modules/@swc/cli/package.json",
-				"../../node_modules/@swc/core/package.json",
-				"../../node_modules/@swc/jest/package.json",
-				"../../node_modules/@vdtn359/base-typescript/package.json",
-				"../../node_modules/typescript/package.json"
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx"
 			],
 			"cache": false,
 			"dependsOn": ["build"]
@@ -115,15 +107,15 @@
 		"plan-release": {
 			"inputs": [
 				"src/**",
-				"tsconfig.json",
 				"package.json",
+				"tsconfig.json",
+				"tsconfig.eslint.json",
 				"../../tsconfig.base.json",
-				"../../node_modules/@swc-node/register/package.json",
-				"../../node_modules/@swc/cli/package.json",
-				"../../node_modules/@swc/core/package.json",
-				"../../node_modules/@swc/jest/package.json",
-				"../../node_modules/@vdtn359/base-typescript/package.json",
-				"../../node_modules/typescript/package.json"
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx"
 			],
 			"cache": false,
 			"dependsOn": ["build"]

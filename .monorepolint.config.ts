@@ -71,6 +71,7 @@ module.exports = {
                 options: {
                     scripts: {
                         "clean": "rm -rf dist",
+                        "default": "echo default",
                         "lint": "eslint . --max-warnings=0",
                         "build": "swc --config-file ../../.swcrc ./src -d dist",
                         "test": "jest --passWithNoTests",
