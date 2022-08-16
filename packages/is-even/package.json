@@ -1,7 +1,11 @@
 {
 	"name": "@vdtn359/is-even",
-	"version": "0.4.1",
+	"version": "0.4.3",
 	"main": "dist/index.js",
+	"files": [
+		"src",
+		"dist"
+	],
 	"scripts": {
 		"lint": "eslint . --max-warnings=0",
 		"build": "swc --config-file ../../.swcrc ./src -d dist",
@@ -12,7 +16,8 @@
 		"release": "release-it --ci",
 		"plan-release": "release-it --ci --dry-run",
 		"patch": "release-it -i patch --ci",
-		"default": "echo default"
+		"default": "echo default",
+		"publish": "pnpm publish --no-git-checks"
 	},
 	"dependencies": {
 		"commander": "^8.3.0"

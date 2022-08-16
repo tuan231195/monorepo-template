@@ -1,7 +1,8 @@
-/* eslint-disable */
+// eslint-disable-next-line import/no-extraneous-dependencies
 const merge = require('lodash.merge');
 
 module.exports = (dirname, overrides = {}) => {
+	// eslint-disable-next-line import/no-dynamic-require
 	const packageJson = require(`${dirname}/package.json`);
 	const name = packageJson.name.split('/')[1];
 
@@ -51,16 +52,17 @@ module.exports = (dirname, overrides = {}) => {
 				addUntrackedFiles: true,
 			},
 			npm: {
-				publish: true,
+				publish: false,
 			},
 			github: {
 				release: true,
 				releaseName: `Release: ${name} \${version}`,
 			},
 			hooks: {
-				"after:bump": "cd ../.. && git add . --all",
-			}
+				'after:bump': 'cd ../.. && git add . --all',
+				'after:release': 'npm run publish --if present',
+			},
 		},
-		overrides,
+		overrides
 	);
 };

@@ -5,9 +5,9 @@ const sourceFiles = ['src/**', 'package.json'];
 const sourceFilesWithTests = sourceFiles.concat(['tests/**']);
 
 const noTestFiles = [':!src/*.test.ts', ':!src/*.test.tsx', ':!src/*.spec.ts', ':!src/*.spec.tsx'];
-const tsConfig = ['tsconfig.json', 'tsconfig.eslint.json', '../../tsconfig.base.json', '../../.swcrc'];
+const tsConfig = ['tsconfig.json', 'tsconfig.json', '../../tsconfig.json', '../../.swcrc'];
 const testConfig = ['jest.config.js'];
-const lintConfig = ['.eslintrc.js', '.eslintignore', '../../.prettierrc'];
+const lintConfig = ['.eslintrc.js', '.eslintignore', '../../.eslintrc.js', '../../.prettierrc'];
 const packageConfig = ['Dockerfile', '../../.dockerignore'];
 
 const ciDependencies = ['../../docker-compose.yml'];

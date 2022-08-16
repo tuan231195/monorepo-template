@@ -1,5 +1,5 @@
 {
-	"extends": "../../tsconfig.base.json",
+	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"outDir": "./dist/",
 		"baseUrl": ".",
@@ -8,5 +8,5 @@
 			"src/*": ["./src/*"]
 		}
 	},
-	"include": ["./**/*.ts"]
+	"include": ["./**/*.ts", ".eslintrc.js", ".release-it.js", "jest.config.js"]
 }

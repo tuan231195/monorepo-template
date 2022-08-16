@@ -1,7 +1,1 @@
-/* eslint-disable */
-
-module.exports = require('../../.release-it.js')(__dirname, {
-	npm: {
-		publish: true,
-	},
-});
+module.exports = require('../../.release-it')(__dirname);

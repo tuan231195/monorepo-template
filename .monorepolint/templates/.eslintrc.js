@@ -1,14 +1,14 @@
 const path = require('path');
 
 module.exports = {
-	extends: ['@vdtn359/eslint-config'],
+	...require('../../.eslintrc'),
 	parserOptions: {
-		project: path.resolve(__dirname, 'tsconfig.eslint.json'),
+		project: path.resolve(__dirname, 'tsconfig.json'),
 	},
 	settings: {
 		'import/resolver': {
 			typescript: {
-				project: path.resolve(__dirname, 'tsconfig.eslint.json'),
+				project: path.resolve(__dirname, 'tsconfig.json'),
 			},
 		},
 	},

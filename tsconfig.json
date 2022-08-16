@@ -1,0 +1,20 @@
+{
+	"extends": "./node_modules/@vdtn359/base-typescript/tsconfig.json",
+	"exclude": ["**/node_modules", "**/dist"],
+	"compilerOptions": {
+		"noEmit": true
+	},
+	"include": [
+		".eslintrc.js",
+		".release-it.js",
+		".cz-config.js",
+		".monorepolint.config.ts",
+		".monorepolint/templates/.eslintrc.js",
+		".monorepolint/templates/.release-it.apps.js",
+		".monorepolint/templates/.release-it.packages.js",
+		".monorepolint/**/*.ts",
+		".monorepolint/**/*.js",
+		"scripts/**/*.ts",
+		"scripts/**/*.js"
+	]
+}
