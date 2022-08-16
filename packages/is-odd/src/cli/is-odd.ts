@@ -3,7 +3,7 @@ import { isOdd } from '..';
 
 const program = new Command();
 
-program.option('-n, --number <number>', 'Input numbers');
+program.option('-n, --number <number>', 'input numbers');
 
 program.parse(process.argv);
 
