@@ -1,6 +1,6 @@
 {
 	"name": "@vdtn359/odd-server",
-	"version": "0.5.5",
+	"version": "0.5.6",
 	"private": true,
 	"main": "dist/index.js",
 	"scripts": {
