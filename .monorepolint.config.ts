@@ -94,7 +94,7 @@ module.exports = {
 				options: {
 					scripts: {
 						watch: 'swc --config-file ../../.swcrc ./src -d dist -w',
-						publish: 'pnpm publish --no-git-checks',
+						'publish-package': 'pnpm publish --no-git-checks',
 					},
 				},
 				includePackages: getPackagesMatching('./packages/*'),

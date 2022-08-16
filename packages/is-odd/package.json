@@ -17,7 +17,8 @@
 		"plan-release": "release-it --ci --dry-run",
 		"patch": "release-it -i patch --ci",
 		"default": "echo default",
-		"publish": "pnpm publish --no-git-checks"
+		"publish": "pnpm publish --no-git-checks",
+		"publish-package": "pnpm publish --no-git-checks"
 	},
 	"dependencies": {
 		"@vdtn359/is-even": "workspace:*",

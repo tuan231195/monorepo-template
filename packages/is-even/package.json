@@ -1,6 +1,6 @@
 {
 	"name": "@vdtn359/is-even",
-	"version": "0.4.3",
+	"version": "0.4.4",
 	"main": "dist/index.js",
 	"files": [
 		"src",
@@ -17,7 +17,8 @@
 		"plan-release": "release-it --ci --dry-run",
 		"patch": "release-it -i patch --ci",
 		"default": "echo default",
-		"publish": "pnpm publish --no-git-checks"
+		"publish": "pnpm publish --no-git-checks",
+		"publish-package": "pnpm publish --no-git-checks"
 	},
 	"dependencies": {
 		"commander": "^8.3.0"
