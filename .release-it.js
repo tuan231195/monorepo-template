@@ -46,7 +46,7 @@ module.exports = (dirname, overrides = {}) => {
 				},
 			},
 			git: {
-				commitMessage: `chore(repo): release ${name} \${version}`,
+				commitMessage: `chore(repo): release ${name} \${version} [skip ci]`,
 				tagName: `${name}@\${version}`,
 				addUntrackedFiles: true,
 			},

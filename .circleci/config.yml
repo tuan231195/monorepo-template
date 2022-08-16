@@ -1,13 +1,36 @@
-version: '2.1'
-workflows:
-    version: '2'
-    build_and_tests:
-        jobs:
-            - pass
+version: 2.1
+
+orbs:
+    continuation: circleci/continuation@0.3.1
 jobs:
-    pass:
-        machine: true
+    generate_config:
+        working_directory: ~/app
+        docker:
+            - image: vdtn359/node-pnpm-base:16-alpine-7.9.0
         steps:
+            - checkout
+            - restore_cache:
+                  key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
             - run:
-                  description: Pass
-                  command: echo 'pass'
+                  name: Install
+                  command: pnpm install --frozen-lockfile
+            - save_cache:
+                  key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
+                  paths:
+                      - node_modules
+                        - .
+            - run:
+                  name: Monorepo lint
+                  command: npm run monorepolint:check
+            - run:
+                  name: Generate pipeline config
+                  command: node ./scripts/generate-pipeline-config
+            - continuation/continue:
+                  parameters: '{}'
+                  configuration_path: configs/generated_config.yml
+
+workflows:
+    version: 2
+    setup:
+        jobs:
+            - generate_config
