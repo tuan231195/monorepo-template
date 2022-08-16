@@ -1,7 +1,7 @@
 const { exec } = require('shelljs');
 
 const getPackagesMatching = (glob: string) => {
-    const packages = JSON.parse(exec(`pnpm ls --filter ${glob} --json`, { silent:true }).stdout);
+    const packages = JSON.parse(exec(`pnpm ls --filter '${glob}' --json`, { silent:true }).stdout);
     return packages.map((p: any) => p.name);
 }
 
@@ -31,14 +31,14 @@ module.exports = {
                     file: ".release-it.js",
                     templateFile: ".monorepolint/templates/.release-it.apps.js"
                 },
-                includePackages: getPackagesMatching('./components'),
+                includePackages: getPackagesMatching('./components/*'),
             },
             {
                 options: {
                     file: ".release-it.js",
                     templateFile: ".monorepolint/templates/.release-it.packages.js"
                 },
-                includePackages: getPackagesMatching('./packages'),
+                includePackages: getPackagesMatching('./packages/*'),
             },
             {
                 options: {
@@ -63,7 +63,7 @@ module.exports = {
                     file: ".node-dev.json",
                     templateFile: ".monorepolint/templates/.node-dev.json"
                 },
-                includePackages: getPackagesMatching('./components'),
+                includePackages: getPackagesMatching('./components/*'),
             }
         ],
         ":package-script": [
@@ -92,7 +92,7 @@ module.exports = {
                         "docker": "docker build -t ${npm_package_config_docker}:${npm_package_version} . && docker tag ${npm_package_config_docker}:${npm_package_version} ${npm_package_config_docker}:latest"
                     },
                 },
-                includePackages: getPackagesMatching('./components'),
+                includePackages: getPackagesMatching('./components/*'),
             },
             {
                 options: {
@@ -100,7 +100,7 @@ module.exports = {
                         "watch": "swc --config-file ../../.swcrc ./src -d dist -w",
                     },
                 },
-                includePackages: getPackagesMatching('./packages'),
+                includePackages: getPackagesMatching('./packages/*'),
             }
         ],
         ":package-order": true,
