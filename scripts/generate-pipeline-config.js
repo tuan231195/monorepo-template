@@ -49,9 +49,7 @@ if (affectedPackages.length > 0) {
     }
 } else {
     const passJob = new CJob(`pass`);
-    passJob.prop('docker', {
-        image: 'cimg/base:stable'
-    })
+    passJob.prop('machine', true)
     passJob.addMultilineStep('run', {
         description: 'Pass',
         command: `echo 'pass'`

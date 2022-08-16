@@ -1,5 +1,5 @@
 version: 2.1
-
+setup: true
 orbs:
     continuation: circleci/continuation@0.3.1
 jobs:
@@ -27,7 +27,7 @@ jobs:
                   command: node ./scripts/generate-pipeline-config
             - continuation/continue:
                   parameters: '{}'
-                  configuration_path: configs/generated_config.yml
+                  configuration_path: .circleci/generated-config.yml
 
 workflows:
     version: 2
