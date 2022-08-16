@@ -20,18 +20,17 @@
 		},
 		"default": {
 			"inputs": [
-				"src/**",
-				"package.json",
+				"**/*",
 				"tsconfig.json",
 				"tsconfig.eslint.json",
 				"../../tsconfig.base.json",
 				"../../.swcrc",
-				"tests/**",
 				"jest.config.js",
 				".eslintrc.js",
 				".eslintignore",
 				"../../.prettierrc",
-				"../../docker-compose.yml"
+				"Dockerfile",
+				"../../.dockerignore"
 			],
 			"outputs": []
 		},

@@ -17,7 +17,7 @@ const testDependencies = sourceFilesWithTests.concat(testConfig);
 const lintDependencies = sourceFilesWithTests.concat(lintConfig);
 const packageDependencies = sourceOnlyDependencies.concat(packageConfig);
 const defaultDependencies = Array.from(
-	new Set([...sourceDependencies, ...testDependencies, ...lintDependencies, ...ciDependencies])
+	new Set(['**/*', ...tsConfig, ...testConfig, ...lintConfig, ...packageConfig, ...ciDependencies])
 );
 
 const baseObject = {
