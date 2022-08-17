@@ -1,5 +1,18 @@
 
 
+### [0.6.1](https://github.com/tuan231195/monorepo-template/compare/odd-server@0.6.0...odd-server@0.6.1) (2022-08-17)
+
+
+### Bug Fixes
+
+* **package:** enable extra verbose output ([559f967](https://github.com/tuan231195/monorepo-template/commit/559f967e831d8f3f32ba2baccc10de1c7e3a3475))
+
+
+### Other changes
+
+* **repo:** release is-even 1.1.1 [skip ci] ([c9db9ea](https://github.com/tuan231195/monorepo-template/commit/c9db9ea5339b293d43d21bb0016cde6bdddbe4d2))
+* **repo:** release is-odd 1.1.1 [skip ci] ([cedbb6c](https://github.com/tuan231195/monorepo-template/commit/cedbb6ca935913997365ef301efc369f99053c55))
+
 ## 0.6.0 (2022-08-17)
 
 
