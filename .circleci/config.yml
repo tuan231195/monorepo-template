@@ -1,42 +1,42 @@
 version: 2.1
 setup: true
 orbs:
-    continuation: circleci/continuation@0.3.1
+  continuation: circleci/continuation@0.3.1
 parameters:
-    action_type:
-        type: string
-        default: default
+  action_type:
+    type: string
+    default: default
 jobs:
-    generate_config:
-        working_directory: ~/app
-        docker:
-            - image: vdtn359/node-pnpm-base:16-alpine-7.9.0
-        steps:
-            - checkout
-            - restore_cache:
-                  key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
-            - run:
-                  name: Install
-                  command: pnpm install --frozen-lockfile
-            - save_cache:
-                  key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
-                  paths:
-                      - node_modules
-            - run:
-                  name: Monorepo lint
-                  command: npm run monorepolint:check
-            - run:
-                  name: Generate pipeline config
-                  command: node ./scripts/generate-pipeline-config << pipeline.parameters.action_type >>
-            - run:
-                  name: Check config
-                  command: cat .circleci/generated-config.yml
-            - continuation/continue:
-                  parameters: '{}'
-                  configuration_path: .circleci/generated-config.yml
+  generate_config:
+    working_directory: ~/app
+    docker:
+      - image: vdtn359/node-pnpm-base:16-alpine-7.9.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
+      - run:
+          name: Install
+          command: pnpm install --frozen-lockfile
+      - save_cache:
+          key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - node_modules
+      - run:
+          name: Monorepo lint
+          command: npm run monorepolint:check
+      - run:
+          name: Generate pipeline config
+          command: node ./scripts/generate-pipeline-config << pipeline.parameters.action_type >>
+      - run:
+          name: Check config
+          command: cat .circleci/generated-config.yml
+      - continuation/continue:
+          parameters: '{}'
+          configuration_path: .circleci/generated-config.yml
 workflows:
-    version: 2
-    setup:
-        jobs:
-            - generate_config:
-                  name: generate_<< pipeline.parameters.action_type >>_config
+  version: 2
+  setup:
+    jobs:
+      - generate_config:
+          name: generate_<< pipeline.parameters.action_type >>_config

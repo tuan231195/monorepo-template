@@ -121,7 +121,7 @@ function buildPackageJob() {
 		})
 		.prop('docker', [
 			{
-				image: 'vdtn359/node-pnpm-base:16-alpine-7.9.0',
+				image: 'vdtn359/node-pnpm-docker-base:16-alpine-7.9.0',
 			},
 		])
 		.addSinglelineStep('checkout')
@@ -132,7 +132,9 @@ function buildPackageJob() {
 			name: 'Install',
 			command: 'pnpm i --frozen-lockfile',
 		})
-		.addSinglelineStep('setup_remote_docker')
+		.addMultilineStep('setup_remote_docker', {
+			version: '20.10.14',
+		})
 		.addMultilineStep('run', {
 			name: 'Build',
 			command: `npm run package -- --filter ${affectedPackage}`,

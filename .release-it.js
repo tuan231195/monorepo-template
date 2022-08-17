@@ -35,6 +35,7 @@ module.exports = (dirname, overrides = {}) => {
 							},
 						],
 					},
+					infile: 'CHANGELOG.md',
 					gitRawCommitsOpts: {
 						path: dirname,
 					},
