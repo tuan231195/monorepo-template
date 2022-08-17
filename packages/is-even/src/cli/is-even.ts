@@ -3,7 +3,7 @@ import { isEven } from '..';
 
 const program = new Command();
 
-program.option('-n, --number <number>', 'input number');
+program.option('-n, --number <number>', 'Input number');
 
 program.parse(process.argv);
 
