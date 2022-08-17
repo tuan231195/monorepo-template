@@ -1,0 +1,50 @@
+version: "3.7"
+x-volumes: &volumes
+  volumes:
+    - .:/app
+    - /app/node_modules
+    - /app/components/odd-server/node_modules
+    - /app/components/even-server/node_modules
+    - /app/packages/is-odd/node_modules
+    - /app/packages/is-even/node_modules
+services:
+  traefik:
+    image: "traefik:v2.6"
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  dev-tasks:
+    <<: *volumes
+    image: vdtn359/monorepo-template-base
+    command: npm run watch
+  odd-server:
+    <<: *volumes
+    depends_on:
+      - dev-tasks
+    image: vdtn359/monorepo-template-base
+    command: npm run start:single -- @vdtn359/odd-server
+    expose:
+      - 3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.odd-server.rule=Host(`odd-server.localhost`)"
+      - "traefik.http.routers.odd-server.entrypoints=web"
+  even-server:
+    <<: *volumes
+    depends_on:
+      - dev-tasks
+    image: vdtn359/monorepo-template-base
+    expose:
+      - 3000
+    command: npm run start:single -- @vdtn359/even-server
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.even-server.rule=Host(`even-server.localhost`)"
+      - "traefik.http.routers.even-server.entrypoints=web"

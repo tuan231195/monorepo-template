@@ -1,0 +1,6 @@
+{
+	"deps": 0,
+	"extensions": {
+		"ts": "@swc-node/register"
+	}
+}

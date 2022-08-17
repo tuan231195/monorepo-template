@@ -1,0 +1,12 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"baseUrl": ".",
+		"paths": {
+			"@vdtn359/*": ["./node_modules/@vdtn359/*", "../../packages/*"],
+			"src/*": ["./src/*"]
+		}
+	},
+	"include": ["./**/*.ts", ".eslintrc.js", ".release-it.js", "jest.config.js"]
+}

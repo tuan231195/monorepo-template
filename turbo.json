@@ -1,0 +1,123 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"globalDependencies": [],
+	"pipeline": {
+		"build": {
+			"inputs": [
+				"src/**",
+				"package.json",
+				"tsconfig.json",
+				"tsconfig.json",
+				"../../tsconfig.json",
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx"
+			],
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"]
+		},
+		"default": {
+			"inputs": [
+				"**/*",
+				"tsconfig.json",
+				"tsconfig.json",
+				"../../tsconfig.json",
+				"../../.swcrc",
+				"jest.config.js",
+				".eslintrc.js",
+				".eslintignore",
+				"../../.prettierrc",
+				"Dockerfile",
+				"../../.dockerignore"
+			],
+			"outputs": []
+		},
+		"tsc": {
+			"inputs": [
+				"src/**",
+				"package.json",
+				"tsconfig.json",
+				"tsconfig.json",
+				"../../tsconfig.json",
+				"../../.swcrc"
+			],
+			"outputs": []
+		},
+		"test": {
+			"dependsOn": ["build"],
+			"outputs": [],
+			"inputs": ["src/**", "package.json", "tests/**", "jest.config.js"]
+		},
+		"clean": {
+			"outputs": []
+		},
+		"lint": {
+			"inputs": ["src/**", "package.json", "tests/**", ".eslintrc.js", ".eslintignore", "../../.prettierrc"],
+			"outputs": []
+		},
+		"watch": {
+			"cache": false,
+			"outputs": []
+		},
+		"start": {
+			"cache": false,
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"package": {
+			"dependsOn": ["build"],
+			"inputs": [
+				"src/**",
+				"package.json",
+				"tsconfig.json",
+				"tsconfig.json",
+				"../../tsconfig.json",
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx",
+				"Dockerfile",
+				"../../.dockerignore"
+			]
+		},
+		"patch": {
+			"cache": false,
+			"dependsOn": ["build"]
+		},
+		"release": {
+			"inputs": [
+				"src/**",
+				"package.json",
+				"tsconfig.json",
+				"tsconfig.json",
+				"../../tsconfig.json",
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx"
+			],
+			"cache": false,
+			"dependsOn": ["build"]
+		},
+		"plan-release": {
+			"inputs": [
+				"src/**",
+				"package.json",
+				"tsconfig.json",
+				"tsconfig.json",
+				"../../tsconfig.json",
+				"../../.swcrc",
+				":!src/*.test.ts",
+				":!src/*.test.tsx",
+				":!src/*.spec.ts",
+				":!src/*.spec.tsx"
+			],
+			"cache": false,
+			"dependsOn": ["build"]
+		}
+	}
+}
