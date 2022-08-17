@@ -1,5 +1,12 @@
 
 
+### [1.1.1](https://github.com/tuan231195/monorepo-template/compare/is-even@1.1.0...is-even@1.1.1) (2022-08-17)
+
+
+### Bug Fixes
+
+* **package:** enable extra verbose output ([559f967](https://github.com/tuan231195/monorepo-template/commit/559f967e831d8f3f32ba2baccc10de1c7e3a3475))
+
 ## 1.1.0 (2022-08-17)
 
 

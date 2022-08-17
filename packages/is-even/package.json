@@ -1,26 +1,26 @@
 {
-  "name": "@vdtn359/is-even",
-  "version": "1.1.0",
-  "main": "dist/index.js",
-  "files": [
-    "src",
-    "dist"
-  ],
-  "scripts": {
-    "lint": "eslint . --max-warnings=0",
-    "build": "swc --config-file ../../.swcrc ./src -d dist",
-    "test": "jest --passWithNoTests",
-    "tsc": "tsc",
-    "watch": "swc --config-file ../../.swcrc ./src -d dist -w",
-    "clean": "rm -rf dist",
-    "release": "release-it --ci -VV",
-    "plan-release": "release-it --ci --dry-run -VV",
-    "patch": "release-it -i patch --ci -VV",
-    "default": "echo default",
-    "publish-package": "pnpm publish --no-git-checks"
-  },
-  "dependencies": {
-    "commander": "^8.3.0"
-  },
-  "types": "src/index.ts"
+	"name": "@vdtn359/is-even",
+	"version": "1.1.1",
+	"main": "dist/index.js",
+	"files": [
+		"src",
+		"dist"
+	],
+	"scripts": {
+		"lint": "eslint . --max-warnings=0",
+		"build": "swc --config-file ../../.swcrc ./src -d dist",
+		"test": "jest --passWithNoTests",
+		"tsc": "tsc",
+		"watch": "swc --config-file ../../.swcrc ./src -d dist -w",
+		"clean": "rm -rf dist",
+		"release": "release-it --ci -VV",
+		"plan-release": "release-it --ci --dry-run -VV",
+		"patch": "release-it -i patch --ci -VV",
+		"default": "echo default",
+		"publish-package": "pnpm publish --no-git-checks"
+	},
+	"dependencies": {
+		"commander": "^8.3.0"
+	},
+	"types": "src/index.ts"
 }
