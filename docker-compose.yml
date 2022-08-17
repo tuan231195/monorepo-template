@@ -3,10 +3,6 @@ x-volumes: &volumes
   volumes:
     - .:/app
     - /app/node_modules
-    - /app/components/odd-server/node_modules
-    - /app/components/even-server/node_modules
-    - /app/packages/is-odd/node_modules
-    - /app/packages/is-even/node_modules
 services:
   traefik:
     image: "traefik:v2.6"
